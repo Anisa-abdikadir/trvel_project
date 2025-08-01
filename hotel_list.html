@@ -10,404 +10,199 @@
 
 </head>
 <body>
-     <div class="w-full h-[500px] ">
-        <div class="w-full h-[100px] relative shadow-xl  text-[20px]   ">
-            <div class="py-[20px]">
-            <i class="fa-solid fa-plane pl-[100px] "></i>
-                <h1 class=" pl-[130px] mt-[-30px]">Find Flight</h1>
-            </div>
+     <div class="w-full min-h-screen bg-gray-50 px-4 md:px-10">
+  <!-- Header -->
+  <div class="w-full h-[100px] relative shadow-xl flex flex-wrap items-center justify-between text-lg font-semibold text-gray-700">
+    <div class="flex items-center gap-2 px-4 py-2">
+      <i class="fa-solid fa-plane text-xl"></i>
+      <h1>Find Flight</h1>
+    </div>
 
-                <div class=" ml-[250px]  mt-[-50px]">
-            <i class="fa-solid fa-bed  "></i>
-            <h1 class="ml-[30px] mt-[-27px]">Find Stays</h1>
-            </div>
+    <div class="flex items-center gap-2 px-4 py-2">
+      <i class="fa-solid fa-bed text-xl"></i>
+      <h1>Find Stays</h1>
+    </div>
 
-            <div class="ml-[600px] font-semibold mt-[-50px] text-[40px]">
-                            <h1>g<span class="text-[#8DD3BB]">e</span>lobe</h1>
+    <div class="text-3xl font-bold px-4 py-2">
+      g<span class="text-[#8DD3BB]">e</span>lobe
+    </div>
 
-            </div>
+    <div class="flex items-center px-4 py-2">
+      <i class="fa-solid fa-heart text-xl"></i>
+      <h3 class="ml-2">Favourites</h3>
+    </div>
+  </div>
 
-            <!-- heart -->
-             
-       
-        <div class="ml-[1000px] mt-[-40px]">
-             <i class="fa-solid fa-heart"></i>
-             <h3 class="pl-[20px] mt-[-30px]">Favourites</h3>
-             <img src="" alt="">
-             </div>
+  <!-- Search Box -->
+  <div class="relative w-full max-w-7xl mx-auto bg-white shadow-lg rounded-xl mt-10 p-4 md:p-6 flex flex-col md:flex-row gap-4">
+    <div class="flex-1">
+      <label class="block text-sm font-medium text-gray-700 mb-1">Enter Destination</label>
+      <input type="text" placeholder="Somalia, Somali Land" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" />
+    </div>
 
-              </div>
+    <div class="flex-1">
+      <label class="block text-sm font-medium text-gray-700 mb-1">Check In</label>
+      <input type="date" class="w-full px-4 py-2 border rounded-md" />
+    </div>
 
+    <div class="flex-1">
+      <label class="block text-sm font-medium text-gray-700 mb-1">Check Out</label>
+      <input type="date" class="w-full px-4 py-2 border rounded-md" />
+    </div>
 
-               <!-- box -->
-        <div class="relative h-[150px]  w-[1000px] ml-[90px] bg-white shadow-lg rounded-xl mt-16 p-6 flex  gap-4">
-      <div class="flex-1">
-        <label class="block text-sm font-medium text-gray-700 mb-1">Enter Destination</label>
-        <input type="text" placeholder="somalia,somali land" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" />
+    <div class="flex-1">
+      <label class="block text-sm font-medium text-gray-700 mb-1">Rooms & Guests</label>
+      <div class="px-4 py-2 border rounded-md">
+        <h3>1 room, 2 guests</h3>
       </div>
+    </div>
+  </div>
+
+  <!-- Main Layout: Filter + Results -->
+  <div class="flex flex-col lg:flex-row gap-6 mt-10">
+    <!-- Left Filter -->
+    <div class="w-full lg:w-1/3 bg-white p-4 shadow-md rounded-lg">
+      <h1 class="text-xl font-semibold mb-4">Filters</h1>
+
+      <!-- Price Slider -->
       <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Check In</label>
-        <input type="date" class="px-4 py-2 border rounded-md" />
+        <p class="mb-2">Price</p>
+        <div class="relative h-2 bg-black rounded-full mb-4">
+          <div class="absolute w-6 h-6 rounded-full bg-[#8DD3BB] -top-2 left-0 flex items-center justify-center text-xs font-bold">$50</div>
+          <div class="absolute w-6 h-6 rounded-full bg-[#8DD3BB] -top-2 right-0 flex items-center justify-center text-xs font-bold">$1200</div>
+        </div>
       </div>
-      
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Check Out</label>
-        <input type="date" class="px-4 py-2 border rounded-md " />
+
+      <!-- Departure Time -->
+      <div class="mt-8">
+        <p class="mb-2">Departure Time</p>
+        <div class="relative h-2 bg-black rounded-full mb-4">
+          <div class="absolute w-6 h-6 rounded-full bg-[#8DD3BB] -top-2 left-0 flex items-center justify-center text-xs font-bold">5am</div>
+          <div class="absolute w-6 h-6 rounded-full bg-[#8DD3BB] -top-2 right-0 flex items-center justify-center text-xs font-bold">11pm</div>
+        </div>
       </div>
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Rooms & Guests</label>
-        <div class="px-4 py-2 border rounded-md ">
-          <h3>1 room, 2 guests</h3>
+
+      <!-- Rating -->
+      <div class="mt-8">
+        <h2 class="mb-2">Rating</h2>
+        <div class="flex flex-wrap gap-2">
+          <div class="px-3 py-1 border border-[#8DD3BB] rounded-md text-sm">0+</div>
+          <div class="px-3 py-1 border border-[#8DD3BB] rounded-md text-sm">1+</div>
+          <div class="px-3 py-1 border border-[#8DD3BB] rounded-md text-sm">2+</div>
+          <div class="px-3 py-1 border border-[#8DD3BB] rounded-md text-sm">3+</div>
+          <div class="px-3 py-1 border border-[#8DD3BB] rounded-md text-sm">4+</div>
+        </div>
+      </div>
+
+      <!-- Airlines -->
+      <div class="mt-10">
+        <h2 class="text-lg font-semibold mb-2">Airlines</h2>
+        <div class="flex flex-col gap-3">
+          <label class="flex items-center gap-2">
+            <input type="checkbox" />
+            <span>Emirates</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="checkbox" />
+            <span>FlyDubai</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="checkbox" />
+            <span>Qatar</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="checkbox" />
+            <span>Etihad</span>
+          </label>
         </div>
       </div>
     </div>
 
-
-            <!-- left side -->
-             <div class="flex gap-[10px]">
-
-        <div class="w-[400px] h-[1400px] bg-white rounded-lg shadow-md mt-[20px] ml-[20px]">
-            <h1 class="text-xl font-semibold mb-4">filters</h1>
-                <p class="pt-[10px]">Price</p>
-
-
-                <!-- xariqmada dhuubta -->
-                    <div class="w-[350px] h-[2px]  absolute  ml-[25px] mt-[10px]  bg-black">
-
-            <!-- wareeg yar ee gesaha -->
-
-                <div class="w-[30px] h-[30px] relative  rounded-full ml-[-10px] mt-[-10px] bg-[#8DD3BB]">
-                    <h1 class="pt-[30px] font-semibold">$50</h1>
-                </div>
-                <!-- dhanka bidix kuuska caagrka -->
-                  <div class="w-[30px] h-[30px] relative  rounded-full ml-[340px] mt-[-30px] bg-[#8DD3BB]">
-                <h1 class="pt-[30px] ml-[-20px] font-semibold">$1200</h1>
-                </div>
-
-
-             </div>
-
-             <!-- xariigmp dher ee qafifta -->
-              <div class="bg-slate-500 w-[400px] h-[2px] mt-[100px]"></div>
-
-                <!-- xariqmada dhuubta -->
-                 <p class="pt-[50px]"> Departure Time</p>
-                    <div class="w-[350px] h-[2px]  absolute  ml-[25px] mt-[10px]  bg-black">
-
-            <!-- wareeg yar ee gesaha -->
-
-                <div class="w-[30px] h-[30px] relative  rounded-full ml-[-10px] mt-[-10px] bg-[#8DD3BB]">
-                    <h1 class="pt-[30px] font-semibold">$50</h1>
-                </div>
-                <!-- dhanka bidix kuuska caagrka -->
-                  <div class="w-[30px] h-[30px]   rounded-full ml-[340px] mt-[-30px] bg-[#8DD3BB]">
-                <h1 class="pt-[30px] ml-[-20px] font-semibold">$1200</h1>
-                </div>
-
-
-             </div>
-
-              <!-- xariigmp dher ee qafifta -->
-              <div class="bg-slate-500 w-[400px] h-[2px] mt-[100px]"></div>
-
-
-                <div class="mt-[40px]">
-              <h2>Rating</h2>
-              <div class="flex gap-3 ml-[20px] mt-[20px]">
-              <div class="w-[50px] h-[30px] border border-[#8DD3BB] rounded-[4px] ">
-              <p class="text-[14px]  text-center mt-1"> 0+</p>           
+    <!-- Right Results -->
+    <div class="w-full lg:w-2/3">
+      <!-- Result Card (repeatable) -->
+      <div class="bg-white shadow-md rounded-lg mb-6 p-4 flex flex-col md:flex-row gap-4">
+        <img src="image/image_home/7e4a08e967eaa378312eca22d0bd8fa83e200848.jpg" alt="hotel" class="w-full md:w-[300px] h-[200px] object-cover rounded-md" />
+        <div class="flex-1">
+          <h2 class="text-xl font-bold">CVK Park Bosphorus Hotel Istanbul</h2>
+          <p class="text-sm text-gray-500 mb-2">Cumhuriyet Mah. İnönü Cad, No:8, Istanbul</p>
+          <div class="flex items-center gap-1 text-yellow-400">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">20+ Amenities</p>
+          <div class="flex items-center justify-between mt-4">
+            <div class="flex items-center gap-2">
+              <span class="border border-[#8DD3BB] px-2 py-1 rounded-md text-sm">4.5</span>
+              <span class="font-semibold">Very Good</span>
+              <span class="text-sm text-gray-500">371 reviews</span>
             </div>
-
-            <div class="w-[50px] h-[30px] border border-[#8DD3BB] rounded-[4px] ">
-              <p class="text-[14px]  text-center mt-1"> 1+</p>           
+            <div class="flex items-center gap-2">
+              <button class="text-[#8DD3BB]">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="CV park.html" class="bg-[#8DD3BB] px-4 py-2 rounded-md text-white font-semibold">View Place</a>
             </div>
-
-             <div class="w-[50px] h-[30px] border border-[#8DD3BB] rounded-[4px] ">
-              <p class="text-[14px]  text-center mt-1">2+</p>           
-            </div>
-             <div class="w-[50px] h-[30px] border border-[#8DD3BB] rounded-[4px] ">
-              <p class="text-[14px]  text-center mt-1">3+</p>           
-            </div>
-             <div class="w-[50px] h-[30px] border border-[#8DD3BB] rounded-[4px] ">
-              <p class="text-[14px]  text-center mt-1">+4</p>           
-            </div>
-            </div>
-
-                          <!-- xariigmp dher ee qafifta -->
-              <div class="bg-slate-500 w-[400px] h-[2px] mt-[100px]"></div>
-
-
-            <!-- aorlines -->
-            <h1 class="text-[30px]">Airlines</h1>
-            <div class="flex flex-col gap-4">
-                 <div class="w-[30px] h-[30px] ml-[20px] border-[2px] border-black rounded-[4px] ">
-              <p class="pl-[30px]">Emirated</p>          
-            </div>
-
-                             <div class="w-[30px] h-[30px] ml-[20px] border-[2px] border-black rounded-[4px] ">
-              <p class="pl-[30px]">flydubai</p>          
-            </div>
-                             <div class="w-[30px] h-[30px] ml-[20px] border-[2px] border-black rounded-[4px] ">
-              <p class="pl-[30px]">qatar</p>          
-            </div>
-                             <div class="w-[30px] h-[30px] ml-[20px] border-[2px] border-black rounded-[4px] ">
-              <p class="pl-[30px]">Etihad</p>          
-            </div>
-            </div>
-
-            </div>
-
-             <!-- xariigmp dher ee qafifta -->
-              <div class="bg-slate-500 w-[400px] h-[2px] mt-[100px]"></div>
-
-
-                <div class="mt-[40px]">
-              <h2>Rating</h2>
-              <div class="flex gap-3 ml-[20px] mt-[20px]">
-              <div class="w-[50px] h-[30px] border border-[#8DD3BB] rounded-[4px] ">
-              <p class="text-[14px]  text-center mt-1"> 0+</p>           
-            </div>
-
-            <div class="w-[50px] h-[30px] border border-[#8DD3BB] rounded-[4px] ">
-              <p class="text-[14px]  text-center mt-1"> 1+</p>           
-            </div>
-
-             <div class="w-[50px] h-[30px] border border-[#8DD3BB] rounded-[4px] ">
-              <p class="text-[14px]  text-center mt-1">2+</p>           
-            </div>
-             <div class="w-[50px] h-[30px] border border-[#8DD3BB] rounded-[4px] ">
-              <p class="text-[14px]  text-center mt-1">3+</p>           
-            </div>
-             <div class="w-[50px] h-[30px] border border-[#8DD3BB] rounded-[4px] ">
-              <p class="text-[14px]  text-center mt-1">+4</p>           
-            </div>
-            </div>
-
-                          <!-- xariigmp dher ee qafifta -->
-              <div class="bg-slate-500 w-[400px] h-[2px] mt-[100px]"></div>
-
-
-            <!-- aorlines -->
-            <h1 class="text-[30px]">Airlines</h1>
-            <div class="flex flex-col gap-4">
-                 <div class="w-[30px] h-[30px] ml-[20px] border-[2px] border-black rounded-[4px] ">
-              <p class="pl-[30px]">Emirated</p>          
-            </div>
-
-                             <div class="w-[30px] h-[30px] ml-[20px] border-[2px] border-black rounded-[4px] ">
-              <p class="pl-[30px]">flydubai</p>          
-            </div>
-                             <div class="w-[30px] h-[30px] ml-[20px] border-[2px] border-black rounded-[4px] ">
-              <p class="pl-[30px]">qatar</p>          
-            </div>
-                             <div class="w-[30px] h-[30px] ml-[20px] border-[2px] border-black rounded-[4px] ">
-              <p class="pl-[30px]">Etihad</p>          
-            </div>
-            </div>
-
-
-
-                
-
-            </div>
-        
+          </div>
         </div>
+      </div>
 
-             
-                    <!-- right -->
-             <div class="  w-[800px] h-[1800px] rounded-lg shadow-md mt-[20px] ml-[20px]">
-            
-            <div class=" h-[150px]  w-[700px] bg-white rounded-md shadow-black shadow-md ml-[30px] ">
-
-
-
-             </div>
-
-             <!-- <div class="mt-[150px]">
-                <p>Showing 4 of 257 places</p>
-                <div>
-                <p>Sort by Recommended</p>
-                </div>
-             </div> -->
-
-             <div class="">
-             <div class=" w-[780px] h-[300px] mt-[150px] mr-[300px] rounded-md shadow-md bg-white">
-                <div class="flex gap-5">
-                   
-                 <img class="rounded-s w-[300px] h-[300px]" src="image/image_home/7e4a08e967eaa378312eca22d0bd8fa83e200848.jpg" alt="">
-                    
-
-                 <div class="p-4">
-      <h2 class="text-xl font-bold">CVK Park Bosphorus Hotel Istanbul</h2>
-      <p class="text-sm text-gray-600">Cumhuriyet Mah. İnönü Cad, No:8, Istanbul</p> 
-
-
-         <div class="mt-[10px] ml-[1px] flex">
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-               </div>
-                     <p class="text-sm mt-[-20px] ml-[100px] text-gray-600">20+ Amenities</p>
-
-
-               <div class="w-[50px] h-[30px] border border-[#8DD3BB] rounded-[4px] mt-[10px] ">
-              <p class="text-[14px]  text-center mt-1">4.5</p>  
-              <h1 class="font-bold pl-[50px] mt-[-25px]">VeryGood </h1> 
-              <p class="ml-[130px] mt-[-25px]">371reviews</p>
+      <div class="bg-white shadow-md rounded-lg mb-6 p-4 flex flex-col md:flex-row gap-4">
+        <img src="image/image_home/7e4a08e967eaa378312eca22d0bd8fa83e200848.jpg" alt="hotel" class="w-full md:w-[300px] h-[200px] object-cover rounded-md" />
+        <div class="flex-1">
+          <h2 class="text-xl font-bold">CVK Park Bosphorus Hotel Istanbul</h2>
+          <p class="text-sm text-gray-500 mb-2">Cumhuriyet Mah. İnönü Cad, No:8, Istanbul</p>
+          <div class="flex items-center gap-1 text-yellow-400">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">20+ Amenities</p>
+          <div class="flex items-center justify-between mt-4">
+            <div class="flex items-center gap-2">
+              <span class="border border-[#8DD3BB] px-2 py-1 rounded-md text-sm">4.5</span>
+              <span class="font-semibold">Very Good</span>
+              <span class="text-sm text-gray-500">371 reviews</span>
             </div>
-
-      </div>   
-               
-                </div>
-                <!-- xariigmp dher ee qafifta -->
-               <div class="bg-slate-500  h-[2px] ml-[300px] mt-[-150px] "></div>
-                     <div class="w-[50px] h-[50px] border  border-[#8DD3BB] rounded-[4px] mt-[30px] ml-[330px] ">
-                 <i class="fa-solid fa-heart pl-[10px] pt-[20px]"></i>
-                            <DIV class="ml-[60px] mt-[-40px]">
-                        <button class="bg-[#8DD3BB] w-[390px] h-[50px] "><a href="CV park.html">View Place</a></button>
-                    
-                            </div> 
-                </div>
-             </div>
-
-             
-             <!-- boxe2 -->
-
-                          
-             <div class=" w-[780px] h-[300px] mt-[70px] mr-[300px] rounded-md shadow-md bg-white">
-                <div class="flex gap-5">
-                   
-                 <img class="rounded-s w-[300px] h-[300px]" src="image/image_home/7e4a08e967eaa378312eca22d0bd8fa83e200848.jpg" alt="">
-                    
-
-                 <div class="p-4">
-      <h2 class="text-xl font-bold">CVK Park Bosphorus Hotel Istanbul</h2>
-      <p class="text-sm text-gray-600">Cumhuriyet Mah. İnönü Cad, No:8, Istanbul</p> 
-
-
-         <div class="mt-[10px] ml-[1px] flex">
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-               </div>
-                     <p class="text-sm mt-[-20px] ml-[100px] text-gray-600">20+ Amenities</p>
-
-
-               <div class="w-[50px] h-[30px] border border-[#8DD3BB] rounded-[4px] mt-[10px] ">
-              <p class="text-[14px]  text-center mt-1">4.5</p>  
-              <h1 class="font-bold pl-[50px] mt-[-25px]">VeryGood </h1> 
-              <p class="ml-[130px] mt-[-25px]">371reviews</p>
+            <div class="flex items-center gap-2">
+              <button class="text-[#8DD3BB]">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="CV park.html" class="bg-[#8DD3BB] px-4 py-2 rounded-md text-white font-semibold">View Place</a>
             </div>
-
-      </div>   
-               
-                </div>
-                <!-- xariigmp dher ee qafifta -->
-               <div class="bg-slate-500  h-[2px] ml-[300px] mt-[-150px] "></div>
-                     <div class="w-[50px] h-[50px] border  border-[#8DD3BB] rounded-[4px] mt-[30px] ml-[330px] ">
-                 <i class="fa-solid fa-heart pl-[10px] pt-[20px]"></i>
-                            <DIV class="ml-[60px] mt-[-40px]">
-                        <button class="bg-[#8DD3BB] w-[390px] h-[50px] "><a href="CV park.html">View Place</a></button>
-                    
-                            </div> 
-                </div>
-             </div>
-
-             <!-- b3 -->
-
-             <div class=" w-[780px] h-[300px] mt-[50px] mr-[300px] rounded-md shadow-md bg-white">
-                <div class="flex gap-5">
-                   
-                 <img class="rounded-s w-[300px] h-[300px]" src="image/image_home/7e4a08e967eaa378312eca22d0bd8fa83e200848.jpg" alt="">
-                    
-
-                 <div class="p-4">
-      <h2 class="text-xl font-bold">CVK Park Bosphorus Hotel Istanbul</h2>
-      <p class="text-sm text-gray-600">Cumhuriyet Mah. İnönü Cad, No:8, Istanbul</p> 
+          </div>
+        </div>
+      </div>
 
 
-         <div class="mt-[10px] ml-[1px] flex">
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-               </div>
-                     <p class="text-sm mt-[-20px] ml-[100px] text-gray-600">20+ Amenities</p>
-
-
-               <div class="w-[50px] h-[30px] border border-[#8DD3BB] rounded-[4px] mt-[10px] ">
-              <p class="text-[14px]  text-center mt-1">4.5</p>  
-              <h1 class="font-bold pl-[50px] mt-[-25px]">VeryGood </h1> 
-              <p class="ml-[130px] mt-[-25px]">371reviews</p>
+      <div class="bg-white shadow-md rounded-lg mb-6 p-4 flex flex-col md:flex-row gap-4">
+        <img src="image/image_home/7e4a08e967eaa378312eca22d0bd8fa83e200848.jpg" alt="hotel" class="w-full md:w-[300px] h-[200px] object-cover rounded-md" />
+        <div class="flex-1">
+          <h2 class="text-xl font-bold">CVK Park Bosphorus Hotel Istanbul</h2>
+          <p class="text-sm text-gray-500 mb-2">Cumhuriyet Mah. İnönü Cad, No:8, Istanbul</p>
+          <div class="flex items-center gap-1 text-yellow-400">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-sm text-gray-500 mt-1">20+ Amenities</p>
+          <div class="flex items-center justify-between mt-4">
+            <div class="flex items-center gap-2">
+              <span class="border border-[#8DD3BB] px-2 py-1 rounded-md text-sm">4.5</span>
+              <span class="font-semibold">Very Good</span>
+              <span class="text-sm text-gray-500">371 reviews</span>
             </div>
-
-      </div>   
-               
-                </div>
-                <!-- xariigmp dher ee qafifta -->
-               <div class="bg-slate-500  h-[2px] ml-[300px] mt-[-150px] "></div>
-                     <div class="w-[50px] h-[50px] border  border-[#8DD3BB] rounded-[4px] mt-[30px] ml-[330px] ">
-                 <i class="fa-solid fa-heart pl-[10px] pt-[20px]"></i>
-                            <DIV class="ml-[60px] mt-[-40px]">
-                        <button class="bg-[#8DD3BB] w-[390px] h-[50px] "><a href="CV park.html">View Place</a></button>
-                    
-                            </div> 
-                </div>
-             </div>
-
-             
-             <div class=" w-[780px] h-[300px] mt-[50px] mr-[300px] rounded-md shadow-md bg-white">
-                <div class="flex gap-5">
-                   
-                 <img class="rounded-s w-[300px] h-[300px]" src="image/image_home/7e4a08e967eaa378312eca22d0bd8fa83e200848.jpg" alt="">
-                    
-
-                 <div class="p-4">
-      <h2 class="text-xl font-bold">CVK Park Bosphorus Hotel Istanbul</h2>
-      <p class="text-sm text-gray-600">Cumhuriyet Mah. İnönü Cad, No:8, Istanbul</p> 
-
-
-         <div class="mt-[10px] ml-[1px] flex">
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-               </div>
-                     <p class="text-sm mt-[-20px] ml-[100px] text-gray-600">20+ Amenities</p>
-
-
-               <div class="w-[50px] h-[30px] border border-[#8DD3BB] rounded-[4px] mt-[10px] ">
-              <p class="text-[14px]  text-center mt-1">4.5</p>  
-              <h1 class="font-bold pl-[50px] mt-[-25px]">VeryGood </h1> 
-              <p class="ml-[130px] mt-[-25px]">371reviews</p>
+            <div class="flex items-center gap-2">
+              <button class="text-[#8DD3BB]">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <a href="CV park.html" class="bg-[#8DD3BB] px-4 py-2 rounded-md text-white font-semibold">View Place</a>
             </div>
+          </div>
+        </div>
+      </div>
 
-      </div>   
-               
-                </div>
-                <!-- xariigmp dher ee qafifta -->
-               <div class="bg-slate-500  h-[2px] ml-[300px] mt-[-150px] "></div>
-                     <div class="w-[50px] h-[50px] border  border-[#8DD3BB] rounded-[4px] mt-[30px] ml-[330px] ">
-                 <i class="fa-solid fa-heart pl-[10px] pt-[20px]"></i>
-                            <DIV class="ml-[60px] mt-[-40px]">
-                        <button class="bg-[#8DD3BB] w-[390px] h-[50px] "><a href="CV park.html">View Place</a></button>
-                    
-                            </div> 
-                </div>
-             </div>
-             <button class="bg-black w-[800px] h-[50px] mt-[30px]  text-[white]">See all</button>
-             
-            
-             </div> 
+      <!-- Add more result cards here... -->
+      <button class="bg-black text-white w-full py-3 rounded-md mt-4">See all</button>
+    </div>
+  </div>
+</div>
 
-
-             </div>
 
          
 
