@@ -8,7 +8,44 @@
  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    <div class="flex gap-10 mt-10 ml-32">
+
+    <!-- Responsive Header Section -->
+<div class=" sm:w-full h-[60px] bg-white shadow-md flex items-center justify-between px-4 sm:px-8">
+  
+  <!-- Left: Navigation -->
+  <div class="flex items-center gap-4">
+    <div class="flex items-center gap-1">
+      <i class="fa-solid fa-plane text-sm"></i>
+      <p class="text-[11px] sm:text-[12px] font-semibold hidden sm:block">Find Flight</p>
+    </div>
+    <div class="flex items-center gap-1">
+      <i class="fa-solid fa-car text-sm hidden sm:block"></i>
+      <p class="text-[11px] sm:text-[12px] font-semibold hidden  sm:block">Find Stays</p>
+    </div>
+  </div>
+
+  <!-- Center: Logo -->
+  <h1 class="text-[22px] sm:text-[30px] font-semibold text-center">
+    <a href="index.html">golobe</a>
+  </h1>
+
+  <!-- Right: User Info -->
+  <div class="flex items-center gap-2 sm:gap-3">
+    <i class="fa-solid fa-heart text-sm"></i>
+    <p class="text-[11px] sm:text-[12px] font-medium">Favourites</p>
+    <img class="w-9 h-9 rounded-full" src="booking-img/img1.jpg" alt="User Avatar">
+    <p class="text-[11px] sm:text-[12px] font-medium">John D</p>
+  </div>
+</div>
+
+
+
+
+
+    <div class=" sm:flex md:flex gap-10 mt-10 ml-5 sm:ml-32">
+        <div>
+            <img class="w-[400px] h-[490px]" src="images/diyaard.png" alt="">
+        </div>
         <div>
             <h1 class="text-[30px] mb-5">GL<span class="text-green-400 ">O</span>BE</h1>
             <h1 class="font-bold text-[20px] mb-4">Login</h1>
@@ -28,9 +65,57 @@
                     <button class="px-9 mx-5 mt-4 ring-1"><i class="fa-brands fa-apple"></i></button>
                  </div>
         </div>
-        <div>
-            <img class="w-[400px] h-[490px]" src="images/diyaard.png" alt="">
-        </div>
+        
     </div>
+
+       <!-- footer section  -->
+    <div class="flex flex-col md:flex-row flex-wrap bg-[#6ad8b1] w-full gap-10 px-6 md:px-24 py-10 mt-10 text-sm">
+    <div>
+      <h1 class="font-bold text-lg mb-2">GLOBE</h1>
+    </div>
+
+    <div class="flex gap-4 mt-2 md:mt-10">
+      <i class="fa-brands fa-square-facebook"></i>
+      <i class="fa-brands fa-square-twitter"></i>
+      <i class="fa-brands fa-square-instagram"></i>
+      <i class="fa-brands fa-square-youtube"></i>
+    </div>
+
+    <div>
+      <h1 class="font-bold mb-1">Our Destinations</h1>
+      <p>Canada</p>
+      <p>Alaska</p>
+      <p>France</p>
+      <p>Iceland</p>
+    </div>
+
+    <div>
+      <h1 class="font-bold mb-1">Our Activities</h1>
+      <p>Northern Lights</p>
+      <p>Cruising & Sailing</p>
+      <p>Multi-activities</p>
+      <p>Kayaking</p>
+    </div>
+
+    <div>
+      <h1 class="font-bold mb-1">Travel Blogs</h1>
+      <p>Bali Travel Guide</p>
+      <p>Sri Lanka Travel Guide</p>
+      <p>Peru Travel Guide</p>
+    </div>
+
+    <div>
+      <h1 class="font-bold mb-1">About Us</h1>
+      <p>Our Story</p>
+      <p>Work with Us</p>
+    </div>
+
+    <div>
+      <h1 class="font-bold mb-1">Contact Us</h1>
+      <p>Email Us</p>
+      <p>Help Center</p>
+    </div>
+  </div>
+
 </body>
 </html>
